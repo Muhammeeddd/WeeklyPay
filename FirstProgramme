@@ -1,0 +1,50 @@
+#include <stdio.h>
+int main()
+{
+        double hoursworked;
+        printf("Okay, how many hours did you work this week : ");
+        scanf("%lf",&hoursworked);
+
+        if ( hoursworked <= 40)
+        {
+                double pay = (double) hoursworked * 12;
+                if  (pay <= 300)
+                {
+                        double taxes = pay * 0.15;
+                        double moneyAfterTaxes = pay - taxes;
+                        printf("You made %lf$ this week after taxes\nTaxes were : %lf\n", moneyAfterTaxes, taxes);
+                }
+
+                        else if ( pay > 300 && pay <= 450 )
+                        {
+                                double taxesBefore300 = 300 * 0.15;
+                                double taxesAfter300 = ( pay-300 ) * 0.2;
+                                double totalTaxes = taxesBefore300 + taxesAfter300;
+                                double totalTaxedMoney =pay - totalTaxes;
+                                printf("You made %lf$ this week after taxes\nTaxes were : %lf$\n%lf$ For the first 300$ and %lf$ for the rest.\n",totalTaxedMoney, totalTaxes, taxesBefore300, taxesAfter300 );
+                        }
+                                else
+                                {
+                                        double taxesBefore300 = 300* 0.15;
+                                        double taxesAfter300 = ( pay - 300 ) *0.2;
+                                        double totalTaxes = taxesBefore300 + taxesAfter300;
+                                        double totalTaxedMoney = pay - totalTaxes;
+                                        printf("You made %lf$ this week after taxes\nTaxes were : %lf$\n%lf for the first 300$ and %lf$ for the rest", totalTaxedMoney, totalTaxes,taxesBefore300, taxesAfter300);
+                                }
+        }
+                else if ( hoursworked > 40 )
+                {
+                        double overtime = (double) hoursworked - 40;
+                        double overtimePay = overtime * 180;
+                        double pay = overtime * 18 + 480.0;
+                        double taxes = pay * 0.25;
+                        double totalTaxedMoney = pay - taxes;
+                        printf("You made %lf$ this week after taxes\nTaxes were : %lf Because you made more than 450$ you got taxed 20 percent Good work! ", totalTaxedMoney, taxes);
+
+                }
+
+
+                return 0;
+}
+~                                                                                                                                                                                                          
+~                   
